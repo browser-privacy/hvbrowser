@@ -1,4 +1,7 @@
 TODO:
+- Using react router for Home/Web
+- Move to styled-component
+- Break down App.js to tsx.
 - Replace uuid with react-native-uuid
 
 

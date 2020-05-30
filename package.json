@@ -1,10 +1,12 @@
 {
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
+    "precommit": "lint-staged",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "prettier": "prettier 'src/**/*.js'"
   },
   "dependencies": {
     "buffer": "^5.4.3",
@@ -12,6 +14,8 @@
     "expo": "^35.0.0",
     "iconv-lite": "^0.5.0",
     "lodash": "^4.17.15",
+    "mobx": "^5.15.0",
+    "mobx-react": "^6.1.4",
     "prop-types": "^15.7.2",
     "react": "16.8.3",
     "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
@@ -19,10 +23,36 @@
     "react-native-messages": "^0.2.4",
     "react-native-uuid": "^1.4.9",
     "stream": "^0.0.2",
+    "styled-components": "4.2.0",
     "uuid": "^3.3.3"
   },
   "devDependencies": {
-    "babel-preset-expo": "^5.0.0"
+    "@babel/core": "^7.2.2",
+    "@babel/runtime": "^7.3.1",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-preset-expo": "^5.0.0",
+    "babel-runtime": "^6.26.0",
+    "jest-expo": "~28.0.0",
+    "react-test-renderer": "16.3.1",
+    "@babel/plugin-proposal-decorators": "^7.7.0",
+    "@types/react": "^16.8.23",
+    "@types/react-native": "^0.57.65",
+    "babel-preset-expo": "^7.1.0",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.16.0",
+    "typescript": "^3.6.3"
   },
-  "private": true
+  "private": true,
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  }
 }
